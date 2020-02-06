@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import Grid from "@material-ui/core/Grid";
+import { Grid, Typography } from "@material-ui/core";
 import { connect } from "react-redux";
 import DailyWeather from "./components/DailyWeather";
 import TodaysWeather from "./components/TodaysWeather";
+import IconButton from "@material-ui/core/IconButton";
+import RefreshIcon from "@material-ui/icons/Refresh";
 // import axios from "axios";
 
 class WeatherApp extends Component {
@@ -21,7 +23,14 @@ class WeatherApp extends Component {
     return (
       <Grid container>
         <Grid item xs={12}>
-          <h1>{this.props.weather.title}</h1>
+          <Typography variant="h4">
+            {this.props.weather.title}
+            <span>
+              <IconButton>
+                <RefreshIcon onClick={this.props.onRefresh}/>
+              </IconButton>
+            </span>
+          </Typography>
         </Grid>
         <TodaysWeather weather={this.props.weather.consolidated_weather[0]} />
         {this.props.weather.consolidated_weather.map(dailyWeather => (
@@ -38,4 +47,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(WeatherApp);
+const mapDispatchToProps = dispatch => {
+  return {
+    onRefresh: () => dispatch({type: 'REFRESH'})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WeatherApp);

@@ -1,13 +1,12 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
+import { Grid, Typography } from "@material-ui/core";
 import Moment from "react-moment";
 
 const TodaysWeather = ({ weather }) => (
   <React.Fragment>
     <Grid item xs={6}>
-      <p>
-        <Moment date={weather.applicable_date} format="dddd MMM, Do" />
-        <br></br>
+      <Typography>
+        <Typography variant="h6"><Moment date={weather.applicable_date} format="dddd MMM, Do" /></Typography>
         {weather.weather_state_name}
         <br></br>
         <img
@@ -17,15 +16,15 @@ const TodaysWeather = ({ weather }) => (
             ".ico"
           }
           alt={weather.weather_state_name}
-        ></img><h1>{Math.round(weather.the_temp)}<span>&#8451;</span></h1>
-      </p>
+        ></img><Typography variant="h5">{Math.round(weather.the_temp)}<span>&#8451;</span></Typography>
+      </Typography>
     </Grid>
     <Grid item xs={6}>
-      <p>
+      <Typography variant="body1">
         Wind Speed: {Math.round(weather.wind_speed)} mph
         <br></br>Humidity: {Math.round(weather.humidity)}%<br></br>Air Pressure:{" "}
         {Math.round(weather.air_pressure)} mbar
-      </p>
+      </Typography>
     </Grid>
   </React.Fragment>
 );
