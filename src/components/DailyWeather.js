@@ -2,8 +2,8 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import Moment from "react-moment";
 
-const DailyWeather = ({ weather }) => (
-  <Grid item xs={2}>
+const DailyWeather = ({ weather, key }) => (
+  <Grid item xs={2} key={key}>
     <Typography variant="h6">
       <Moment date={weather.applicable_date} format="dddd" />
     </Typography>
