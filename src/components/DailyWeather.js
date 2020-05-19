@@ -1,29 +1,28 @@
-import React from "react";
-import { Grid, Typography } from "@material-ui/core";
-import Moment from "react-moment";
+import React from 'react';
+import Moment from 'react-moment';
 
 const DailyWeather = ({ weather, key }) => (
-  <Grid item xs={2} key={key}>
-    <Typography variant="h6">
-      <Moment date={weather.applicable_date} format="dddd" />
-    </Typography>
-    <br></br>
+  <div className="day-weather">
+    <h3>
+      <Moment date={weather.applicable_date} format="ddd" />
+    </h3>
     <img
       src={
-        "https://www.metaweather.com/static/img/weather/ico/" +
+        'https://www.metaweather.com/static/img/weather/ico/' +
         weather.weather_state_abbr +
-        ".ico"
+        '.ico'
       }
       alt={weather.weather_state_name}
     ></img>
-    <br></br>
-    <Typography variant="overline">
-      <span>{Math.round(weather.max_temp)}&#8451;</span>{" "}
-      <span>{Math.round(weather.min_temp)}&#8451;</span>
-    </Typography>
-    <br></br>
-    <Typography variant="body2">Humidity {weather.humidity}%</Typography>
-  </Grid>
+    <p>
+      {Math.round(weather.max_temp)}
+      <span>&#8451;</span> max
+    </p>
+    <p>
+      {Math.round(weather.min_temp)}
+      <span>&#8451;</span> min
+    </p>
+  </div>
 );
 
 export default DailyWeather;
