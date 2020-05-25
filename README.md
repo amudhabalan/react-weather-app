@@ -1,12 +1,12 @@
 # A Weather App written in ReactJs
 
+#### Watch it in action at https://happy-pare-a2317f.netlify.app/
+
 ## Dark Mode
 ![Dark Mode](screenshot-dark.jpg)
 
 ## Light Mode
 ![Light Mode](screenshot-light.jpg)
-
-#### Watch it in action at https://happy-pare-a2317f.netlify.app/
 
 ## Features
 - Shows today's weather & the weather for the whole week
