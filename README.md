@@ -1,5 +1,22 @@
-A Weather App written in React JS. 
+# A Weather App written in ReactJs
 
-Uses Redux for State Management, Jest & Enzyme for tests, Material UI for UI Components. 
+## Dark Mode
+![Dark Mode](screenshot-dark.jpg)
 
-Click the Refresh Button on top near the city name to get weather from different cities in Australia. 
+## Light Mode
+![Light Mode](screenshot-light.jpg)
+
+#### Watch it in action at https://happy-pare-a2317f.netlify.app/
+
+## Features
+- Weather App that gets live weather from Online APIs
+- Toggle Switch between Dark & Light Mode
+- Shows today's weather & the weather for the whole week
+
+
+## Technology
+- Designed to be Responsive for mobile & tablets
+- ReactJs with Redux for State management
+- Axios Javascript library for HTTP API requests
+- CSS3 for styling
+- Jest & Enzyme for Snapshot Testing
