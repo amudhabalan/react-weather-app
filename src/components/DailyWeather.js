@@ -4,22 +4,22 @@ import Moment from 'react-moment';
 const DailyWeather = ({ weather, key }) => (
   <div className="day-weather">
     <h3>
-      <Moment date={weather.applicable_date} format="ddd" />
+      <Moment unix date={weather.dt} format="ddd" />
     </h3>
     <img
       src={
-        'https://www.metaweather.com/static/img/weather/ico/' +
-        weather.weather_state_abbr +
-        '.ico'
+        'http://openweathermap.org/img/wn/' +
+        weather.weather[0].icon +
+        '@2x.png'
       }
-      alt={weather.weather_state_name}
+      alt={weather.weather[0].description}
     ></img>
     <p>
-      {Math.round(weather.max_temp)}
+      {Math.round(weather.temp.max)}
       <span>&#8451;</span> max
     </p>
     <p>
-      {Math.round(weather.min_temp)}
+      {Math.round(weather.temp.min)}
       <span>&#8451;</span> min
     </p>
   </div>
