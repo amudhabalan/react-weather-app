@@ -1,6 +1,6 @@
 # A Weather App written in ReactJs
 
-#### Watch it in action at https://happy-pare-a2317f.netlify.app/
+#### Watch it in action at https://amudsweather.netlify.app/
 
 ## Dark Mode
 ![Dark Mode](screenshot-dark.jpg)
